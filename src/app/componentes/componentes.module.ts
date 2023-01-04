@@ -10,6 +10,9 @@ import { FormComponent } from './form/form.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    FormComponent
   ]
 })
 export class ComponentesModule { }
