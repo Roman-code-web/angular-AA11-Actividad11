@@ -2,5 +2,5 @@ input.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched{
     border: 2px solid #EB455F;
 }
 input.ng-valid.ng-dirty,textarea.ng-valid.ng-dirty{
-    border: 2px solid #EB455F;
+    border: 2px solid #68B984;
 }
