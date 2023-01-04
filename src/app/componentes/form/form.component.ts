@@ -19,7 +19,7 @@ export class FormComponent implements OnInit  {
       nombre:['',
         [
           Validators.required,
-          Validators.minLength(3)
+          Validators.minLength(5)
         ]
       ],
       correo:['',

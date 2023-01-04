@@ -2,17 +2,17 @@
     <form class="w-96" [formGroup]="formRegistro" (submit)="enviar()">
         <div class="mb-4">
             <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre:</label>
-            <input type="text" style="outline: none;" formControlName="nombre" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="alondra@gmail.com">
+            <input type="text" style="outline: none;" formControlName="nombre" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Alondra selene" >
                 <div class="px-2 py-1" *ngIf="formRegistro.get('nombre')?.touched && formRegistro.get('nombre')?.errors?.['required']">
                     <p class="text-red-500">Escriba su nombre</p>
                 </div>
                 <div class="px-2 py-1" *ngIf="formRegistro.get('nombre')?.touched && formRegistro.get('nombre')?.errors?.['minlength']">
-                    <p class="text-red-500">mínimo 3 caracteres</p>
+                    <p class="text-red-500">mínimo 5 caracteres</p>
                 </div>
         </div>
         <div class="mb-4">
             <label for="correo" class="block mb-2 text-sm font-medium text-gray-900 ">Correo:</label>
-            <input type="email" style="outline: none;" formControlName="correo" id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+            <input type="email" style="outline: none;" formControlName="correo" id="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="alondra@gmail.com" >
                 <div class="px-2 py-1" *ngIf="formRegistro.get('correo')?.touched && formRegistro.get('correo')?.errors?.['required']">
                     <p class="text-red-500">Escriba su correo</p>
                 </div>
@@ -23,7 +23,7 @@
 
         <div class="mb-4">
             <label for="mensaje" class="block mb-2 text-sm font-medium text-gray-900 ">Mensaje</label>
-            <textarea style="resize: none; outline: none;" formControlName="mensaje" id="mensaje" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+            <textarea style="resize: none; outline: none;" formControlName="mensaje" id="mensaje" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escriba su mensaje"></textarea>
                 <div class="px-2 py-1" *ngIf="formRegistro.get('mensaje')?.touched && formRegistro.get('mensaje')?.errors?.['required']">
                     <p class="text-red-500">Escriba su mensaje</p>
                 </div>
@@ -34,8 +34,11 @@
         <div class="flex justify-center"  >
             <button [disabled]="formRegistro.invalid"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Confirmar</button>
         </div>
-        <div>
-            {{formRegistro.valid}}
+        <div class="my-10">
+            <div *ngIf="formRegistro.valid==true">
+                 <p class="bg-emerald-500 text-white text-center">Todos los datos son Correctos</p>
+            </div>
+           
         </div>
     </form>
 </div>
