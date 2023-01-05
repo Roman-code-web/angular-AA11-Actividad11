@@ -7,4 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TablaComponent {
   @Input() listaRegistroRecibida=[{"nombre":"","correo": "", "mensaje":""}];
+  eliminarRegistro(i:number){
+    this.listaRegistroRecibida.splice(i,1);
+  }
 }
