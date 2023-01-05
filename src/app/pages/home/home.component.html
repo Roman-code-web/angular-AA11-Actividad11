@@ -1,1 +1,5 @@
-<app-form></app-form>
+<main class="bg">
+    <app-form (onEnviarLista)="listaRegistroGlobal=$event"></app-form>
+    <app-tabla [listaRegistroRecibida]="listaRegistroGlobal" ></app-tabla>
+</main>
+

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output ,EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -7,11 +8,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit  {
-  //declaramos variables 
+  //declaramos variables  
+  titulo="Formularios Reactivos";
   public formRegistro!:FormGroup;
-  //constructor
+  listaRegistro:any=[]=[];
+  @Output() onEnviarLista=new EventEmitter();
+  
   constructor(private formRegistrobuilder:FormBuilder){
-
   }
 
   ngOnInit(): void {
@@ -37,6 +40,14 @@ export class FormComponent implements OnInit  {
     });
   }
   enviar(){
-    console.log(this.formRegistro.value)
+    Swal.fire({
+      icon: 'success',
+      title: 'Datos Registrados',
+    })
+    //this.jsonDatos=JSON.stringify(this.formRegistro.value) ;  //estaba probando
+    this.listaRegistro.push(this.formRegistro.value);
+    this.onEnviarLista.emit(this.listaRegistro);
+    this.formRegistro.reset();
+    //console.log(this.listaRegistro);//console.log(this.formRegistro);
   }
 }

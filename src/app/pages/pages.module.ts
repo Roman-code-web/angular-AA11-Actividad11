@@ -5,13 +5,16 @@ import { ComponentesModule } from '../componentes/componentes.module';
 
 
 
+
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
     ComponentesModule
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+  
+ }

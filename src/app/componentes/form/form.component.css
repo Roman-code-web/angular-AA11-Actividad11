@@ -1,6 +1,26 @@
+.div__form{
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 6px rgba(0,0,0,0.1);
+}
+input{
+    width: 100%;
+}
+textarea{
+    width: 100%;
+}
 input.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched{
     border: 2px solid #EB455F;
 }
 input.ng-valid.ng-dirty,textarea.ng-valid.ng-dirty{
     border: 2px solid #68B984;
+}
+input:focus , textarea:focus{
+    box-shadow: 0px 0px 5px 0px rgb(0, 94, 255)!important;
+}
+.btn__enviar{
+    width: 100%;
+}
+.form__div{
+    width: auto;
+    min-width: 30% ;
 }
